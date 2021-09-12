@@ -1,0 +1,126 @@
+.theme-1 {
+  &-profile {
+    gap: 45px;
+    padding: 40px;
+    @include centerItem();
+    display: flex;
+    &-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      overflow: hidden;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    &-desc {
+      width: 50vw;
+      @include fontSans();
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &-name {
+        color: $white;
+        font-size: 36px;
+      }
+      &-headline {
+        color: $secondary;
+        font-size: 24px;
+      }
+      &-introduction,
+      &-email {
+        color: $white;
+        font-size: 16px;
+      }
+      &-socmed {
+        font-size: 32px;
+        a {
+          color: white;
+          display: inline-block;
+          margin-right: 10px;
+          &:hover {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &-more-info {
+    font-size: 16px;
+    @include fontSans();
+    color: $dark;
+    margin-bottom: 30px;
+    a {
+      color: inherit;
+    }
+    p {
+      margin-bottom: 10px;
+      line-height: normal;
+    }
+  }
+
+  &-content-menu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    &-item {
+      flex: 0.25;
+      text-decoration: none;
+      background-color: $lighter;
+      @include fontSans();
+      border-radius: 3px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      color: $secondary;
+      gap: 10px;
+      font-size: 24px;
+      transition: all 0.2s;
+      i {
+        font-size: 32px;
+      }
+      p {
+        text-transform: capitalize;
+      }
+      &:visited {
+        text-decoration: none;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: $white;
+        background-color: $dark;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .theme-1 {
+    &-profile {
+      display: block;
+      padding: 0 5vh !important;
+      width: 100%;
+      &-desc {
+        width: 100%;
+        padding-top: 20px;
+        gap: 10px;
+        &-name {
+          font-size: 24px;
+        }
+        &-headline {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-content-menu {
+      &-item {
+        flex: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.theme-1 {
+  &-dark-section {
+    background-color: $dark;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-bottom: 5vh;
+    &-scroll-down {
+      color: $secondary;
+      font-size: 16px;
+      text-decoration: none;
+      display: block;
+      position: absolute;
+      left: 10vw;
+      bottom: 5vh;
+      color: $secondary;
+      z-index: 100;
+      cursor: pointer;
+      @include fontSans();
+      &:hover,
+      &:focus {
+        color: $white !important;
+      }
+      &:active,
+      &:visited {
+        color: $secondary;
+      }
+    }
+  }
+
+  &-light-section {
+    min-height: 100vh;
+    padding: 58px 10vw;
+  }
+
+  &-footer {
+    @include fontSans();
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(249, 249, 249);
+    a {
+      color: inherit;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .theme-1 {
+    .hero {
+      padding: 0 !important;
+      &-scroll-down {
+        left: 5vh;
+      }
+    }
+
+    .light-section {
+      padding-top: 5vh;
+    }
+  }
+}
